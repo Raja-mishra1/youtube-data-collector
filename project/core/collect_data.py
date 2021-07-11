@@ -17,7 +17,7 @@ import requests
 import asyncio
 
 
-DEVELOPER_KEY = 'AIzaSyBWcRihO22qv51qtMR2SqkK7aLGkKxtpU0'
+DEVELOPER_KEY = 'AIzaSyCnSq0M6f6ZuuSX15vXN__3UJbqJZBEXEQ'
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
