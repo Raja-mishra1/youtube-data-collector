@@ -26,6 +26,7 @@ The  application can be scaled  vertically or horizontally and is asynchronous s
 ## Architecture
 
 The application uses the following technologies:
+
     Python: I have prefferd python as a programming language for this application since python being a highly
             dynamic language , encourages rapid development and has a large community and feature rich libraries.
 
