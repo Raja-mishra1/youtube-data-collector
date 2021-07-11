@@ -15,7 +15,7 @@ def sample_task():
     """
     celery task to collect data from youtube and add data to DynamoDB
     """
-    options = {"query":"corona","max_results":150}
+    options = {"query":"Corona","max_results":150}
     data = get_video_information(options)
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('Video')
