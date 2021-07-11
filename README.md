@@ -41,3 +41,8 @@ The application uses the following technologies:
 
     Youtube Data API V3: The YouTube Data API v3 is an API that provides access to YouTube data, such as videos,
             playlists, and channels.I have used this API to collect information regarding video title, description published date and thumbnail URL of videos on specified topics.
+
+
+## Architecture diagram
+
+![alt text](https://github.com/Raja-mishra1/youtube-data-collector/blob/master/Architecture_diagram.png)
