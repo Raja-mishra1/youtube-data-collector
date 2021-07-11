@@ -1,6 +1,10 @@
-
-
+import os
 from pathlib import Path
+
+from celery.schedules import crontab
+
+import core.tasks
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -113,3 +117,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CELERY_BEAT_SCHEDULE = {
+    "sample_task": {
+        "task": "core.tasks.sample_task",
+        "schedule": crontab(minute="*/1"),
+    }
+}
