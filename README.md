@@ -1,7 +1,7 @@
 
 # youtube-data-collector
 youtube-data-collector is Django based web app that collects data using 
-YouTube Data API v3 on a particular search query after every 30 sec using celery and stores data in AWS Dynamo DB.
+YouTube Data API v3 on a particular search query after every 1 min using celery and stores data in AWS Dynamo DB.
 The data can be accessed using two endpoints:
 
        1. http://localhost:1337/api/v1/search_all/ => For all records using pagination
