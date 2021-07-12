@@ -47,3 +47,7 @@ The application uses the following technologies:
 ## Architecture diagram
 
 ![alt text](https://github.com/Raja-mishra1/youtube-data-collector/blob/master/Architecture_diagram.png)
+
+## Credits
+
+I have taken help from some of the opensource repositories which helped me defining the structure of project.
