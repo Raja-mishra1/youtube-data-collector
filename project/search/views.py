@@ -1,4 +1,5 @@
 import boto3
+import math
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import JsonResponse
@@ -28,12 +29,14 @@ def get_video(self,title, *args, **kwargs):
     
 
 
-def get_video_all(self, *args, **kwargs):
+def get_video_all(self,request, *args, **kwargs):
     """[View to show all video data from Dynamodb]
 
     Returns:
         [json]: [All data from DynamoDb ]
     """
+    page = int(request.GET.get("page", 1))
+    per_page = 9
     dynamodb = boto3.resource('dynamodb')
     data = list()
     table = dynamodb.Table('Video')
@@ -44,5 +47,13 @@ def get_video_all(self, *args, **kwargs):
     while 'LastEvaluatedKey' in response:
         response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
         data.extend(response['Items'])
+    total = len(data)
+    start = (page - 1) * per_page
+    end = page + per_page
         
-    return JsonResponse({'data':data})
+    return JsonResponse({
+                "data": data[start:end],
+                "total": total,
+                "page": page,
+                "last_page": math.ceil(total / per_page),
+            })
